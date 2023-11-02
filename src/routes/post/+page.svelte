@@ -63,6 +63,7 @@
     bind:this={input}
     on:change={onChange}
     type="file"
+    accept="image/*"
   />
 
   <div class="mt-2 mx-2">
