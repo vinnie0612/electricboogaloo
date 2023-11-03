@@ -39,7 +39,7 @@
   checkBan();
 </script>
 
-<main class="bg-gray-950 min-h-screen text-white max-w-5xl mx-auto md:border">
+<main class="bg-gray-950 min-h-screen text-white max-w-3xl mx-auto md:border">
   <Nav />
   {#await fetchPosts(page, $filter, $sort.filter)}
     <p class="text-center">loading...</p>

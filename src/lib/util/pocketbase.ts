@@ -8,7 +8,9 @@ pb.autoCancellation(false);
 export const currentUser = writable(pb.authStore.model);
 
 export const signIn = async () => {
-  await pb.collection('users').authWithOAuth2({ provider: 'microsoft' });
+  await pb
+    .collection('users')
+    .authWithOAuth2({ provider: 'microsoft', createData: { isBanned: false } });
 
   let user = get(currentUser);
   if (user?.isBanned) {
