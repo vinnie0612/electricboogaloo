@@ -7,22 +7,25 @@
   import { filter } from '$lib/util/filter';
   import { nextSort, sort } from '$lib/util/sort';
   import { page as webPage } from '$app/stores';
-  import { currentUser, pb, signOut } from '$lib/util/pocketbase';
+  import { onMount } from 'svelte';
   let page = 1;
 
-  $: fetchPosts(page, $filter, $sort.filter);
+  
 
   filter.subscribe((value) => {
     page = 1;
     fetchPosts(page, value, $sort.filter);
   });
 
-  pb.cancelAllRequests();
-  const q = $webPage.url.searchParams.get('q');
-  if (q) {
-    filter.set('id="' + q + '"');
-  }
-  fetchPosts(page, $filter, $sort.filter);
+  $: fetchPosts(page, $filter, $sort.filter);
+
+  onMount(() => {
+    const q = $webPage.url.searchParams.get('q');
+    if (q) {
+      filter.set('id="' + q + '"');
+    }
+    fetchPosts(page, $filter, $sort.filter);
+  });
 </script>
 
 <main class="bg-gray-950 min-h-screen text-white max-w-3xl mx-auto md:border">
