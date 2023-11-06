@@ -23,20 +23,6 @@
     filter.set('id="' + q + '"');
   }
   fetchPosts(page, $filter, $sort.filter);
-
-  const checkBan = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('checking if banned');
-    if (!$currentUser) return;
-    let currentUserRecord = await pb.collection('users').getOne($currentUser?.id);
-
-    if (currentUserRecord.isBanned) {
-      signOut();
-      alert('you have been banned');
-    }
-  };
-
-  checkBan();
 </script>
 
 <main class="bg-gray-950 min-h-screen text-white max-w-3xl mx-auto md:border">
@@ -44,7 +30,7 @@
   {#await fetchPosts(page, $filter, $sort.filter)}
     <p class="text-center">loading...</p>
   {:then}
-    <div class="max-w-3xl md:border mx-auto">
+    <div class="max-w-3xl border border-none mx-auto">
       <div class="flex flex-row justify-between mx-2 mt-2">
         {#if $posts.pages > 1}
           <button
