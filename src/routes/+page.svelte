@@ -8,6 +8,7 @@
   import { nextSort, sort } from '$lib/util/sort';
   import { page as webPage } from '$app/stores';
   import { onMount } from 'svelte';
+  import { currentUser, pb, signOut } from '$lib/util/pocketbase';
   let page = 1;
 
   filter.subscribe((value) => {
@@ -17,13 +18,29 @@
 
   $: fetchPosts(page, $filter, $sort.filter);
 
-  onMount(() => {
+  onMount(async () => {
     const q = $webPage.url.searchParams.get('q');
     if (q) {
       filter.set('id="' + q + '"');
     }
     fetchPosts(page, $filter, $sort.filter);
   });
+
+  const signOutIfBanned = async () => {
+    console.log('sex')
+    if ($currentUser) {
+      let user = await pb.collection('users').getOne($currentUser.id)
+      console.log(user.isBanned);
+      if (user.isBanned) {
+        console.log('Naughty naughty!');
+        await signOut();
+      }
+    } else {
+      console.log('hellnah');
+    }
+  };
+
+  signOutIfBanned()
 </script>
 
 <main class="bg-gray-950 min-h-screen text-white max-w-3xl mx-auto md:border">
