@@ -6,7 +6,7 @@
   $: username = $currentUser?.email.split('@')[0];
 </script>
 
-<div class="flex flex-row justify-between mx-2">
+<div class="flex flex-row mx-2">
   {#if $currentUser}
   <div class="w-1/3">
     <p>{username}</p>
