@@ -25,19 +25,19 @@
           </li>
         </ul>
         <hr class="my-2" />
-        <h2 class="text-lg">posting</h2>
+        <h2 class="text-xl">Posting</h2>
         <p>
           first of all, log in with your <code>@petrik.hu</code> e-mail (microsoft account), then, press
           post.
         </p>
         <p>upload your image, give your post a title and press submit.</p>
-        <h2 class="text-lg mt-2">posting <span class="font-bold">rules</span></h2>
-        <ul>
-          <li>posts must have a title, with a length of 3-30 characters</li>
+        <h2 class="text-xl mt-2">Posting <span class="font-bold">rules</span></h2>
+        <ul class="list-disc ml-4">
+          <li>posts must have a title, with a length of <span class="font-bold">3-30</span> characters</li>
           <li>
             posts must include a <span class="font-bold">non NSFW</span> funny image, related to Petrik
           </li>
-          <li>posts must be funny</li>
+          <li>posts must be <a href="https://dictionary.cambridge.org/dictionary/english/funny" class="underline hover:font-bold">funny</a></li>
           <li>post spamming will result in a ban.</li>
         </ul>
       </div>
