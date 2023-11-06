@@ -10,8 +10,6 @@
   import { onMount } from 'svelte';
   let page = 1;
 
-  
-
   filter.subscribe((value) => {
     page = 1;
     fetchPosts(page, value, $sort.filter);
