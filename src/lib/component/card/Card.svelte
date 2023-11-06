@@ -16,7 +16,7 @@
   };
 </script>
 
-<div class="mt-4 border border-gray-100">
+<div class="mt-4 border border-gray-100 w-full">
   <p class="ml-2 text-lg mt-1">{post.title}</p>
   {#if $currentUser}
     <div class="flex flex-row justify-between mx-2">
