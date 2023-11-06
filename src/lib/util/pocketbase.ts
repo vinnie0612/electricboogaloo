@@ -8,12 +8,11 @@ pb.autoCancellation(false);
 export const currentUser = writable(pb.authStore.model);
 
 export const signIn = async () => {
-  await pb
+  const authData = await pb
     .collection('users')
     .authWithOAuth2({ provider: 'microsoft', createData: { isBanned: false } });
 
-  let user = get(currentUser);
-  if (user?.isBanned) {
+  if (authData.record.isBanned) {
     pb.authStore.clear();
     alert('you have been banned.');
   }
