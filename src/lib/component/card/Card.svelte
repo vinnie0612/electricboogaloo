@@ -17,8 +17,8 @@
 </script>
 
 <div class="mt-4 border border-gray-100 w-full">
-  <p class="ml-2 text-lg mt-1">{post.title}</p>
   {#if $currentUser}
+    <p class="ml-2 text-lg mt-1">{post.title}</p>
     <div class="flex flex-row justify-between mx-2">
       <button
         on:click={() => {
@@ -48,6 +48,7 @@
 
       {#if post.author == $currentUser.id}
         <button
+          class="text-red-500"
           on:click={() => {
             pb.collection('posts').delete(post.id);
             posts.update((posts) => {
@@ -80,6 +81,11 @@
       >
         <p class={post.downvotes.includes($currentUser.id) ? 'text-red-500' : ''}>dislike</p>
       </button>
+    </div>
+  {:else}
+    <div class="mx-2 my-2 flex flex-row justify-between">
+      <p class="text-lg">{post.title}</p>
+      <p class="text-lg"><span class="text-base">score: </span>{post.score}</p>
     </div>
   {/if}
   <img class="w-full" alt={post.title} src={post.imageUrl} />

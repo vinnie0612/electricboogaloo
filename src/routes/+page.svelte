@@ -41,6 +41,10 @@
   signOutIfBanned();
 </script>
 
+<head>
+  <title>PetrikMeme</title>
+</head>
+
 <main class="bg-gray-950 min-h-screen md:py-4 text-white">
   <div class="mx-auto md:border max-w-3xl">
     <Nav />
