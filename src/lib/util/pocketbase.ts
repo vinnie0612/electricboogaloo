@@ -2,7 +2,7 @@ import PocketBase from 'pocketbase';
 
 import { get, writable } from 'svelte/store';
 
-export const pb = new PocketBase('https://pb.petrikreal.tech');
+export const pb = new PocketBase('https://api.petrikmeme.hu');
 pb.autoCancellation(false);
 
 export const currentUser = writable(pb.authStore.model);

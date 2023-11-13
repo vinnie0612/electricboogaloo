@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: petrikmeme-app
+    image: petrikmeme-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "node"
+    environment:
+      # Internal server error messages will not send stacktrace to the browser in production
+      - NODE_ENV=production
+      # Sets the timezone of the containers OS
+      - TZ=Europe/Budapest
+    restart: unless-stopped
+    ports:
+      - 8101:3000
