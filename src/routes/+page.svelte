@@ -27,23 +27,21 @@
   });
 
   const signOutIfBanned = async () => {
-    console.log('sex')
     if ($currentUser) {
-      let user = await pb.collection('users').getOne($currentUser.id)
+      let user = await pb.collection('users').getOne($currentUser.id);
       console.log(user.isBanned);
       if (user.isBanned) {
         console.log('Naughty naughty!');
         await signOut();
       }
     } else {
-      console.log('hellnah');
     }
   };
 
-  signOutIfBanned()
+  signOutIfBanned();
 </script>
 
-<main class="bg-gray-950 min-h-screen md:py-4 text-white ">
+<main class="bg-gray-950 min-h-screen md:py-4 text-white">
   <div class="mx-auto md:border max-w-3xl">
     <Nav />
     {#await fetchPosts(page, $filter, $sort.filter)}
