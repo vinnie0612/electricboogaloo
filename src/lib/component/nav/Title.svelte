@@ -12,11 +12,11 @@
     <span class="text-blue-400">meme</span>
   </button>
   <button
-    class="text-sm"
+    class="text-sm underline"
     on:click={() => {
       goto('/tutorial');
     }}
   >
-    rules & tutorial
+    help
   </button>
 </div>
