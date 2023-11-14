@@ -7,9 +7,7 @@
   <title>PetrikMeme | Tutorial</title>
 </head>
 
-<main
-  class="bg-gray-950 flex flex-row pt-1 max-h-screen min-h-screen text-white max-w-3xl mx-auto md:border"
->
+<main class="bg-gray-950 flex flex-row pt-1 min-h-screen text-white max-w-3xl mx-auto md:border">
   <div class="flex flex-col w-full">
     <Title />
     <hr class="my-2" />
