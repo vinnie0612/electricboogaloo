@@ -34,7 +34,12 @@
     const file = input.files[0];
     if (!file || !title) return;
     const formData = new FormData();
-    formData.append('image', file);
+    const now = new Date().getTime();
+    const unixTimestamp = Math.floor(now / 1000);
+
+    const fileName = `upload_${unixTimestamp}.${file.type.split('/')[1]}`;
+    console.log(fileName);
+    formData.append('image', file, fileName);
     formData.append('title', (document.getElementById('title') as HTMLInputElement).value);
     formData.append('author', $currentUser?.id);
     const createdPost = await pb.collection('posts').create(formData);
