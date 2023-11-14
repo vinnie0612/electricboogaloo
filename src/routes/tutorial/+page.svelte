@@ -62,24 +62,6 @@
           with the post's share link and the reason why you think it should be removed.
         </p>
       </div>
-      <div class="mx-2">
-        <hr class="my-2" />
-        <h2 class="text-xl">Privacy policy</h2>
-        <p>what data we store</p>
-        <ul>
-          <li>
-            your email, your account creation date, your last login date, your IP used to make
-            requests
-          </li>
-          <li>your posts, their titles, their images, their creation date, their last edit date</li>
-          <li>your votes, their creation date</li>
-        </ul>
-        <p>we also use a cookie to authenticate you</p>
-        <p>we do not sell any data, nor do we share it with any third parties</p>
-        <p class="font-bold">
-          by using petrikmeme.hu, your agree to have this data collected about you.
-        </p>
-      </div>
       <button
         class="text-center border p-1 mt-8 text-xl h-10 bg-green-900 md:w-48 md:mx-auto mb-3"
         on:click={() => {

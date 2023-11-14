@@ -10,13 +10,24 @@
   >
     <span class="text-green-400">petrik</span>
     <span class="text-blue-400">meme</span>
-  </button>
-  <button
-    class="text-sm underline"
-    on:click={() => {
-      goto('/tutorial');
-    }}
+    <div /></button
   >
-    help
-  </button>
+  <div>
+    <button
+      class="text-sm underline"
+      on:click={() => {
+        goto('/privacy');
+      }}
+    >
+      privacy
+    </button>
+    <button
+      class="text-sm underline"
+      on:click={() => {
+        goto('/tutorial');
+      }}
+    >
+      help
+    </button>
+  </div>
 </div>
