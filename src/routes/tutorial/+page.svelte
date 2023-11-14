@@ -51,12 +51,6 @@
               class="underline hover:font-bold">funny</a
             >
           </li>
-          <li>
-            posts must be <a
-              href="https://dictionary.cambridge.org/dictionary/english/funny"
-              class="underline hover:font-bold">funny</a
-            >
-          </li>
           <li>post spamming will result in a ban.</li>
         </ul>
       </div>
